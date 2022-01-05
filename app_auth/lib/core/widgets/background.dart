@@ -17,7 +17,7 @@ class Background extends StatelessWidget {
         Container(
           height: AppSize.screenHeight,
           alignment: Alignment.center,
-          decoration: const BoxDecoration(color: AppTheme.defaultBlue),
+          decoration: const BoxDecoration(color: AppTheme.colorBackgroundBlue),
           child: const Align(
             alignment: Alignment.bottomCenter,
           ),

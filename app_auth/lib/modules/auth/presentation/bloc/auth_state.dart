@@ -14,7 +14,12 @@ class AuthLoadingState extends AuthState {
 }
 
 class AuthLoadedState extends AuthState {
-  const AuthLoadedState();
+  final ResponseAuthEntity responseAuthEntity;
+
+  const AuthLoadedState({required this.responseAuthEntity});
+
+  @override
+  List<Object> get props => [responseAuthEntity];
 }
 
 class AuthErrorState extends AuthState {

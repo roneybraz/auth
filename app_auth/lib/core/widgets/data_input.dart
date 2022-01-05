@@ -54,6 +54,7 @@ class DataInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: Theme.of(context).textTheme.bodyText2,
       controller: controller,
       focusNode: focusNode,
       keyboardType: textInputType,
@@ -68,6 +69,8 @@ class DataInput extends StatelessWidget {
       maxLength: maxLength,
       onFieldSubmitted: submitFunc,
       decoration: InputDecoration(
+        hintStyle: Theme.of(context).textTheme.bodyText1,
+        labelStyle: Theme.of(context).textTheme.bodyText1,
         prefixIcon: prefixIcon,
         contentPadding: EdgeInsets.symmetric(
             vertical: AppSize.heightMultiplier! * 1,
@@ -77,16 +80,20 @@ class DataInput extends StatelessWidget {
         hintText: hintText,
         counterText: "",
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppTheme.defaultBlue, width: 1.5),
+          borderSide:
+              BorderSide(color: AppTheme.colorBackgroundBlue, width: 1.5),
         ),
         disabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppTheme.defaultBlue, width: 0.5),
+          borderSide:
+              BorderSide(color: AppTheme.colorBackgroundBlue, width: 0.5),
         ),
         enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppTheme.defaultBlue, width: 0.5),
+          borderSide:
+              BorderSide(color: AppTheme.colorBackgroundBlue, width: 0.5),
         ),
         border: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppTheme.defaultBlue, width: 1.5),
+          borderSide:
+              BorderSide(color: AppTheme.colorBackgroundBlue, width: 1.5),
         ),
         errorBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.red, width: 1.5),

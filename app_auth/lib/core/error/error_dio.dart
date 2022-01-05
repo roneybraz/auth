@@ -30,7 +30,7 @@ class DioExceptions implements Exception {
     }
   }
   String _handleError(int? statusCode, dynamic error) {
-    return error["message"] ?? "Ops, algo deu errado, tente novamente";
+    return error["error"] ?? "Ops, algo deu errado, tente novamente";
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:app_auth/core/error/failures.dart';
+import 'package:app_auth/modules/auth/domain/entities/response_auth_entity.dart';
 import 'package:app_auth/modules/auth/domain/uses_cases/auth_use_case.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -17,13 +18,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     emit(const AuthLoadingState());
-    final failureOrBlockCard = await authUseCase(
+    final failureOrSuccess = await authUseCase(
         ParamsAuth(email: event.email, password: event.password));
 
-    failureOrBlockCard.fold(
+    failureOrSuccess.fold(
         (failure) =>
             emit(AuthErrorState(message: _mapFailureToMessage(failure))),
-        (success) => emit(const AuthLoadedState()));
+        (success) => emit(AuthLoadedState(responseAuthEntity: success)));
   }
 
   String _mapFailureToMessage(Failure failure) {

@@ -25,7 +25,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String password,
   }) async {
     try {
-      Response response = await dio.post('/auth/login', data: {
+      Response response = await dio.post('/api/login', data: {
         "email": email,
         "password": password,
       });

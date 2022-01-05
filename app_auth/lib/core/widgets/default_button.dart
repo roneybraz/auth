@@ -24,7 +24,7 @@ class DefaultButton extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints(minWidth: AppSize.screenWidth!),
         decoration: BoxDecoration(
-          color: AppTheme.defaultGreen,
+          color: AppTheme.colorButton,
           borderRadius: BorderRadius.circular(12),
         ),
         child: MaterialButton(
